@@ -1,43 +1,10 @@
 export interface User {
-  id: string; // uuid v4
+  id: string;
   login: string;
   password: string;
-  version: number; // integer number, increments on update
-  createdAt: number; // timestamp of creation
-  updatedAt: number; // timestamp of last update
-}
-
-export interface Artist {
-  id: string; // uuid v4
-  name: string;
-  grammy: boolean;
-}
-
-export interface Track {
-  id: string; // uuid v4
-  name: string;
-  artistId: string | null; // refers to Artist
-  albumId: string | null; // refers to Album
-  duration: number; // integer number
-}
-
-export interface Album {
-  id: string; // uuid v4
-  name: string;
-  year: number;
-  artistId: string | null; // refers to Artist
-}
-
-export interface Favorites {
-  artists: string[]; // favorite artists ids
-  albums: string[]; // favorite albums ids
-  tracks: string[]; // favorite tracks ids
-}
-
-export interface FavoritesResponse {
-  artists: Artist[];
-  albums: Album[];
-  tracks: Track[];
+  version: number;
+  createdAt: number;
+  updatedAt: number;
 }
 
 export interface UserResponse {
@@ -46,4 +13,37 @@ export interface UserResponse {
   version: number;
   createdAt: number;
   updatedAt: number;
+}
+
+export interface Artist {
+  id: string;
+  name: string;
+  grammy: boolean;
+}
+
+export interface Track {
+  id: string;
+  name: string;
+  artistId: string | null;
+  albumId: string | null;
+  duration: number;
+}
+
+export interface Album {
+  id: string;
+  name: string;
+  year: number;
+  artistId: string | null;
+}
+
+export interface Favorites {
+  artists: string[];
+  albums: string[];
+  tracks: string[];
+}
+
+export interface FavoritesResponse {
+  artists: Artist[];
+  albums: Album[];
+  tracks: Track[];
 }
